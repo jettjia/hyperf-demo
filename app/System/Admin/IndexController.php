@@ -28,4 +28,30 @@ class IndexController extends AbstractController
             'message' => "Hello {$user}.！！！",
         ];
     }
+
+    public function actuator()
+    {
+        $url = (string)$this->request->url();
+        $jsonData = [
+            '_links' => [
+                'self' => [
+                    'href' => $url,
+                    'templated' => false
+                ],
+                'health-path' => [
+                    'href' => $url.'/health/{*path}',
+                    'templated' => true
+                ],
+                'health' => [
+                    'href' => $url.'/health',
+                    'templated' => false
+                ],
+                'info' => [
+                    'href' => $url.'/info',
+                    'templated' => false
+                ],
+            ]
+        ];
+        return $this->response->json($jsonData);
+    }
 }
