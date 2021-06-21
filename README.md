@@ -1,6 +1,12 @@
-# Introduction
+# 介绍
 
-hyperf框架，代码分层设计，单应用多系统设计。
+```
+1.hyperf框架，代码分层设计，单应用多系统设计。
+2.代码service层，增加interface，还有接口的实现。
+3.vo层，定义类，转换后入库。
+4.增加多系统的设计
+```
+
 
 # 环境要求
 
@@ -41,7 +47,7 @@ which will bring up Hyperf default home page.
 
 ```
 ├── app					开发目录
-│   ├── Amqp			        rabbitmq
+│   ├── Amqp			        mq
 │   ├── Dao				Dao层
 │   ├── Exception			错误处理
 │   ├── Listener			监听器
