@@ -41,13 +41,13 @@ which will bring up Hyperf default home page.
 
 ```
 ├── app						开发目录
-│   ├── Amqp					rabbitmq
-│   ├── Dao				        Dao层
-│   ├── Exception				错误处理
-│   ├── Listener				监听器
-│   ├── Middleware				中间件
-│   ├── Model					DB model
-│   ├── Shared					service公共，各个模块共享
+│   ├── Amqp								rabbitmq
+│   ├── Dao				        		Dao层
+│   ├── Exception							错误处理
+│   ├── Listener							监听器
+│   ├── Middleware						中间件
+│   ├── Model								DB model
+│   ├── Shared							service公共，各个模块共享
 │   ├── System					
 |   |   ├── Admin			     模块 Admin
 |   |   ├──├──  Controller		 Controller
@@ -56,7 +56,7 @@ which will bring up Hyperf default home page.
 |   |   ├──├──  Service		     Service层，先定义接口，类似java的分层
 |   |   ├──├──├──  Impl		     Service层，实现
 |   |   ├── IndexController.php  当前模块的入口，还有类似java的actuator，方便监控服务是否正常
-│   └── Task					定时任务处理
+│   └── Task								 定时任务处理
 ├── bin
 │   ├── hyperf.php
 │   └── start.sh
@@ -82,7 +82,7 @@ which will bring up Hyperf default home page.
 │   ├── bootstrap.php
 │   ├── Cases
 │   └── HttpTestCase.php
-├── vendor							第三方依赖
-└── watch							开发环境，自动编译
+├── vendor											第三方依赖
+└── watch											开发环境，自动编译
 ```
 
