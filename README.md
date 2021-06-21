@@ -82,7 +82,7 @@ which will bring up Hyperf default home page.
 │   ├── bootstrap.php
 │   ├── Cases
 │   └── HttpTestCase.php
-├── vendor											第三方依赖
-└── watch											开发环境，自动编译
+├── vendor				第三方依赖
+└── watch				开发环境，自动编译
 ```
 
