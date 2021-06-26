@@ -72,4 +72,16 @@ class CategoryController extends AbstractController
 
         return apiOk($res);
     }
+
+    public function updateSome(RequestInterface $request)
+    {
+        $data = $request->all();
+        $category = new CategoryDef();
+        $category->setCatId($data['cat_id']);
+        $category->setDesc($data['desc']);
+
+        $res =  $this->BaseCategoryService->update($category);
+
+        return apiOk($res);
+    }
 }

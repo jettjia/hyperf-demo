@@ -17,4 +17,5 @@ Router::addGroup('/category', function () {
     Router::addRoute(['POST'], '/add', 'App\System\Admin\Controller\CategoryController@add');
     Router::addRoute(['GET'], '/info', 'App\System\Admin\Controller\CategoryController@info');
     Router::addRoute(['PUT'], '/update', 'App\System\Admin\Controller\CategoryController@update');
+    Router::addRoute(['PUT'], '/updateSome', 'App\System\Admin\Controller\CategoryController@updateSome');
 });

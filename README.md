@@ -92,3 +92,29 @@ which will bring up Hyperf default home page.
 └── watch				开发环境，自动编译
 ```
 
+
+
+# 使用案例
+
+## crud
+
+config/routes.php
+
+```shell
+Router::addGroup('/category', function () {
+    Router::addRoute(['POST'], '/add', 'App\System\Admin\Controller\CategoryController@add');
+    Router::addRoute(['GET'], '/info', 'App\System\Admin\Controller\CategoryController@info');
+    Router::addRoute(['PUT'], '/update', 'App\System\Admin\Controller\CategoryController@update');
+});
+```
+
+
+
+```shell
+PUT 10.4.7.88:9511/category/update
+{
+    "cat_id" : 26,
+    "desc" : "this is desc"
+}
+```
+

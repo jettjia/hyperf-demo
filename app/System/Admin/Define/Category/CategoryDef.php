@@ -92,12 +92,28 @@ class CategoryDef
     }
 
     public function toArray() {
-        return [
+         return [
             'cat_id' => $this->cat_id,
             'cat_name' => $this->cat_name,
             'pid' => $this->pid,
             'desc' => $this->desc,
         ];
+    }
+
+    public function toArrayFilter() {
+        $data = [
+            'cat_id' => $this->cat_id,
+            'cat_name' => $this->cat_name,
+            'pid' => $this->pid,
+            'desc' => $this->desc,
+        ];
+
+        foreach ($data as $k => &$v) {
+            if ($v === NULL) {
+                unset($data[$k]);
+            }
+        }
+        return $data;
     }
 
     public function toJson() {

@@ -17,6 +17,12 @@ class CategoryDao
         return $model->insertGetId($category->toArray());
     }
 
+    public function updateOrigin(CategoryDef $category)
+    {
+        return Category::where('cat_id', $category->getCatId())->update($category->toArray());
+    }
+
+
     public function update(CategoryDef $category)
     {
         return Category::where('cat_id', $category->getCatId())->update($category->toArray());
