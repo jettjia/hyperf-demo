@@ -53,7 +53,7 @@ which will bring up Hyperf default home page.
 │   ├── Listener			监听器
 │   ├── Middleware			中间件
 │   ├── Model				DB model
-│   ├── Shared				service公共，各个模块共享
+│   ├── Shared				service公共，各个模块共享，定义Model的cloumn
 │   ├── System					
 |   |   ├── Admin			模块 Admin
 |   |   ├──├──  Controller	        Controller

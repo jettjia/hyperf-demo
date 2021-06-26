@@ -25,7 +25,7 @@ class CategoryDao
 
     public function update(CategoryDef $category)
     {
-        return Category::where('cat_id', $category->getCatId())->update($category->toArray());
+        return Category::where('cat_id', $category->getCatId())->update($category->toArrayFilter());
     }
 
     public function info(int $cat_id) : array
