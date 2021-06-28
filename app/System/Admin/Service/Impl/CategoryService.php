@@ -10,7 +10,7 @@ use App\System\Admin\Service\CategoryServiceInterface;
 use App\Dao\CategoryDao;
 use App\System\Admin\Define\Category\CategoryDef;
 
-class BaseCategoryService implements CategoryServiceInterface
+class CategoryService implements CategoryServiceInterface
 {
     /**
      * @Inject

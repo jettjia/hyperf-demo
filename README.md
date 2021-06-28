@@ -111,7 +111,7 @@ Router::addGroup('/category', function () {
 
 
 ```shell
-PUT 10.4.7.88:9511/category/update
+PUT 10.4.7.88:9551/category/update
 {
     "cat_id" : 26,
     "desc" : "this is desc"

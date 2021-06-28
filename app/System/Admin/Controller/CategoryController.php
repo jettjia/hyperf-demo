@@ -16,8 +16,8 @@ use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Contract\RequestInterface;
 
 use App\System\Admin\Request\Category\CategoryRequest;
-use App\System\Admin\Service\Impl\BaseCategoryService;
 use App\System\Admin\Define\Category\CategoryDef;
+use App\System\Admin\Service\CategoryServiceInterface;
 
 class CategoryController extends AbstractController
 {
@@ -30,9 +30,9 @@ class CategoryController extends AbstractController
 
     /**
      * @Inject
-     * @var BaseCategoryService
+     * @var CategoryServiceInterface
      */
-    private $BaseCategoryService;
+    private $categoryService;
 
     public function add()
     {
@@ -41,14 +41,14 @@ class CategoryController extends AbstractController
         $category->setPid(0);
         $category->setDesc('');
 
-        $res = $this->BaseCategoryService->add($category);
+        $res = $this->categoryService->add($category);
 
         return apiOk($res);
     }
 
     public function info()
     {
-        $res = $this->BaseCategoryService->info((int)$this->request->input('id'));
+        $res = $this->categoryService->info((int)$this->request->input('id'));
 
         return apiOk($res);
     }
@@ -68,7 +68,7 @@ class CategoryController extends AbstractController
         $category->setPid($data['pid']);
         $category->setDesc($data['desc']);
 
-        $res =  $this->BaseCategoryService->update($category);
+        $res =  $this->categoryService->update($category);
 
         return apiOk($res);
     }
@@ -80,7 +80,7 @@ class CategoryController extends AbstractController
         $category->setCatId($data['cat_id']);
         $category->setDesc($data['desc']);
 
-        $res =  $this->BaseCategoryService->update($category);
+        $res =  $this->categoryService->update($category);
 
         return apiOk($res);
     }
