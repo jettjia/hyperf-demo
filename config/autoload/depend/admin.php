@@ -11,10 +11,10 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-// config/autoload/dependencies.php  完成关系绑定
-$dependencies = array_merge(
-    require BASE_PATH . '/config/autoload/depend/admin.php',
-    require BASE_PATH . '/config/autoload/depend/api.php'
-);
+use App\System\Admin\Service\CategoryServiceInterface;
+use App\System\Admin\Service\Impl\CategoryService;
 
-return $dependencies;
+// admin
+return [
+    CategoryServiceInterface::class => CategoryService::class
+];

@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /**
  * This file is part of Hyperf.
  *
@@ -9,6 +10,19 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
+function rglob($pattern)
+{
+    $files = glob($pattern);
+    if ($files) {
+        foreach ($files as $file) {
+            require_once($file);
+        }
+    }
+}
+
+rglob(BASE_PATH . '/config/routes/*.*');
+
 use Hyperf\HttpServer\Router\Router;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\System\Admin\IndexController@index');
